@@ -1,0 +1,54 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #2563eb;
+  --muted: #94a3b8;
+  --text: #e6eef6;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #071023 0%, #091223 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+header {
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+}
+header h1 { margin: 0; font-size: 18px; }
+
+.container { display: grid; grid-template-columns: 1fr 380px; gap: 18px; padding: 20px; }
+
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+.tools { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
+.tools input { padding:8px; border-radius:6px; border:none; background:rgba(255,255,255,0.03); color:var(--text); }
+.tools button { padding:8px 10px; border-radius:6px; border:none; background:var(--accent); color:white; cursor:pointer; }
+
+table { width:100%; border-collapse:collapse; }
+table thead { font-size: 13px; color:var(--muted); }
+table td, table th { padding:8px 6px; border-bottom:1px solid rgba(255,255,255,0.03); }
+.actions button { margin-right:6px; padding:6px 8px; border-radius:6px; border:none; cursor:pointer; }
+
+.actions .edit { background: #059669; color:white; }
+.actions .delete { background: #dc2626; color:white; }
+
+.modal { position:fixed; left:0; right:0; top:0; bottom:0; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.6); }
+.hidden { display:none; }
+.modal-content { background: #071426; padding:18px; border-radius:10px; width:420px; }
+.modal-content input, .modal-content textarea { width:100%; padding:8px; margin:6px 0 10px; border-radius:6px; border:none; background:rgba(255,255,255,0.02); color:var(--text); }
+.modal-actions { display:flex; gap:8px; justify-content:flex-end; }
+#orderProducts { max-height:300px; overflow:auto; border:1px dashed rgba(255,255,255,0.03); padding:8px; border-radius:6px; background:rgba(255,255,255,0.01); }
+.order-row { display:flex; gap:8px; align-items:center; margin:6px 0; padding:6px; border-radius:6px; background:rgba(255,255,255,0.01); }
+.order-row input[type="number"] { width:80px; padding:6px; }
+#orderResult { margin-top:8px; color:var(--muted); }
